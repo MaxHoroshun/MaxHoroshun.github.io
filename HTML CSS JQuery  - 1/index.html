@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Site HTML5/CSS</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+	<header>
+
+		<div id="logo" onclick="slowScroll('#top')">
+			<span>ITMaster</span>
+		</div>
+
+		<div id="about">
+			<a href="#" title="Возможности" onclick="slowScroll('#main')">Возможности</a>
+			<a href="#" title="Преимущества" onclick="slowScroll('#overview')">Преимущества</a>
+			<a href="#" title="Контакты" onclick="slowScroll('#contacts')">Контакты</a>
+			<a href="#" title="faq" onclick="slowScroll('#faq')">FAQ</a>
+		</div>
+
+	</header>
+
+	<div id="top">
+		<h1>Программирование</h1>
+		<h3>как способ жизни!</h3>
+	</div>
+
+	<div id="main">
+		<div class="intro">
+			<h2>Наши услуги помогут вам!</h2>
+			<span>Большой выбор всего, что может вам пригодиться</span>
+		</div>
+		<div class="text">
+			<span>Выбор товара по всем наименованиям и брендам со всего мира! У нас Вы найдете все! Большой ассортимент товаров из Европы и США!</span>
+		</div>
+	</div>
+
+	<div id="overview">
+		<h2>Преимущества</h2>
+		<h4>С нами будет легче!</h4>
+
+		<div class="img">
+			<img src="https://i.pinimg.com/564x/61/d6/91/61d691a82a4d85eec6b9c55d068b6050.jpg" alt="Ruby">
+			<span>Ищучение языка Ruby для начинающих.</span>
+		</div>
+
+		<div class="img">
+			<img src="http://cdn2.iconfinder.com/data/icons/flurry-for-creative-suite/512/photoshop2.png" alt="Photoshop">
+			<span>Уроки Photoshop для начинающих.</span>
+		</div>
+
+		<div class="img">
+			<img src="https://i.pinimg.com/564x/d5/bd/0a/d5bd0a9d074aad02e42c87ac9567d700.jpg" alt="Swift">
+			<span>Уроки Swift для начинающих.</span>
+		</div>
+
+		<div class="img">
+			<img src="https://itea.ua/wp-content/uploads/2015/04/python-2-min.png" alt="Python3">
+			<span>Ищучение языка Python 3 для начинающих.</span>
+		</div>
+	</div>
+
+	<div id="contacts">
+		<center><h5>Обратная связь</h5></center>
+		<form id="form_input">
+			<label for="name">Имя <span>*</span></label><br>
+			<input type="text" placeholder="Введите имя" name="name" id="name"><br>
+			<label for="email">Ваша почта <span>*</span></label><br>
+			<input type="email" placeholder="Введите вашу почту" name="email" id="email"><br>
+			<label for="message">Сообщение <span>*</span></label><br>
+			<textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+			<div id="mess_send" class="btn">Отправить</div>
+		</form>
+	</div>
+
+	<div id="faq">
+		<div>
+			<span class="title">Оплата</span><br>
+			<span class="heading">Как будет проходить оплата?</span>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui quae excepturi, voluptatem atque rem possimus dolor ducimus commodi exercitationem quaerat voluptate quam iste maxime corporis illum quos, molestiae eaque nihil.</p>
+		</div>
+		<div>
+			<span class="title">Информация</span><br>
+			<span class="heading">Что входит в услуги сервиса?</span>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui quae excepturi, voluptatem atque rem possimus dolor ducimus commodi exercitationem quaerat voluptate quam iste maxime corporis illum quos, molestiae eaque nihil.</p>
+		</div>
+		<div>
+			<span class="title">Гарантии</span><br>
+			<span class="heading">Какие гарантии есть?</span>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui quae excepturi, voluptatem atque rem possimus dolor ducimus commodi exercitationem quaerat voluptate quam iste maxime corporis illum quos, molestiae eaque nihil.</p>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		function slowScroll(id) {
+			$('html, body').animate({
+				scrollTop: $(id).offset().top
+			}, 500);
+		}
+
+		$(document).on("scroll", function () {
+			if($(window).scrollTop() === 0)
+				$("header").removeClass("fixed");
+			else
+				$("header").attr("class", "fixed");
+		});
+	</script>
+	
+</body>
+</html>
